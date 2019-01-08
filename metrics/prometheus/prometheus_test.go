@@ -165,6 +165,7 @@ func TestHistogram(t *testing.T) {
 
 	// Then, we use ExpectedObservationsLessThan to validate.
 	for _, line := range strings.Split(scrape(), "\n") {
+		t.Logf("### %s", line)
 		match := re.FindStringSubmatch(line)
 		if match == nil {
 			continue
